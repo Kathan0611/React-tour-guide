@@ -1,0 +1,123 @@
+/* Popup container for the tour guide */
+.tour-guide-popup {
+  transition: top 0.3s ease, left 0.3s ease; 
+  max-width: 250px; 
+  word-wrap: break-word; 
+}
+
+/* Arrow container for the popup */
+.popup-arrow {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-style: solid;
+}
+
+.popup-arrow-top {
+  bottom: -8px;
+  left: var(--arrow-offset, 50%);
+  transform: translateX(-50%);
+  border-width: 10px 10px 0 10px;
+  border-color: white transparent transparent transparent;
+}
+
+.popup-arrow-bottom {
+  top: -8px;
+  left: var(--arrow-offset, 50%);
+  transform: translateX(-50%);
+  border-width: 0 10px 10px 10px;
+  border-color: transparent transparent white transparent;
+}
+
+.popup-arrow-left {
+  right: -8px;
+  top: var(--arrow-offset, 50%);
+  transform: translateY(-50%);
+  border-width: 10px 10px 10px 0;
+  border-color: transparent white transparent transparent;
+}
+
+.popup-arrow-right {
+  left: -8px;
+  top: var(--arrow-offset, 50%);
+  transform: translateY(-50%);
+  border-width: 10px 0 10px 10px;
+  border-color: transparent transparent transparent white;
+}
+
+
+/* Button container for the popup */
+.popup-buttons {
+  display: flex; 
+  justify-content: space-between;
+  align-items: center; 
+  gap: 20px;
+}
+
+/* Left button group (Previous and Skip buttons) */
+.left-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+/* Right button group (Next button) */
+.right-buttons {
+  display: flex; 
+  justify-content: flex-end; 
+}
+
+/* Tooltip container wrapping the target element */
+.tooltip-container {
+  position: relative; 
+  display: inline-block; 
+}
+
+/* Target div styling */
+.target-div {
+  padding: 10px;
+  background-color: #1e90ff; 
+  color: white;
+  text-align: center;
+  width: 200px;
+  margin-bottom: 10px; 
+}
+
+/* Tooltip content styling */
+.tooltip {
+  position: absolute; 
+  top: 110%; 
+  left: 50%; 
+  transform: translateX(-50%); 
+  background-color: #333; 
+  color: white;
+  padding: 10px; 
+  border-radius: 4px; 
+  white-space: nowrap; 
+  visibility: hidden; 
+  opacity: 0; 
+  transition: opacity 0.3s ease; 
+}
+
+/* Tooltip arrow styling */
+.tooltip-arrow {
+  position: absolute; 
+  top: -5px; 
+  left: 50%; 
+  transform: translateX(-50%); 
+  width: 10px; 
+  height: 10px; 
+  background-color: #333; 
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%); 
+}
+
+/* Tooltip hover effect (display on hover) */
+.tooltip-container:hover .tooltip {
+  visibility: visible;
+  opacity: 1; 
+}
+
+@media (max-width:678px) {
+  .popup-arrow-bottom {
+    top:-8px;
+  }
+}
